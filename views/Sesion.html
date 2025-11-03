@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background: url("Fondo7.1.jpg");
+            background-size: 1280px 760px;;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Contenedor del formulario */
+        .contenedor {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Estilos de los campos */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        /* Estilo del botón */
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+    <script>
+        function iniciarSesion() {
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            if (usuario === "Juan" && contrasena === "Juan") {
+                window.location.href = "INICIO.html";
+            } else {
+                alert("Credenciales incorrectas, por favor intente de nuevo.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Iniciar sesión</h2>
+        <form onsubmit="event.preventDefault(); iniciarSesion();">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+</body>
+</html>
